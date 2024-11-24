@@ -1,0 +1,321 @@
+(defcfg
+  ;; change to your keyboard
+  linux-dev /dev/input/event0
+)
+
+(defsrc
+  esc
+
+     w  e  r       u  i  o
+  a  s  d  f       j  k  l  ;
+  z  x  c  v       n  m  ,  .
+              spc
+)
+
+(deflayer default
+  (tap-hold-release 500 500 esc (layer-switch posh))
+
+     w  e  r       u  i  o
+  a  s  d  f       j  k  l  ;
+  z  x  c  v       n  m  ,  .
+              spc
+)
+
+(deflayer posh
+  (tap-hold-release 500 500 esc (layer-switch default))
+
+                   (chord posh lu3) (chord posh lu2) (chord posh lu1)                    (chord posh ru1) (chord posh ru2) (chord posh ru3)
+  (chord posh lpk) (chord posh ld3) (chord posh ld2) (chord posh ld1)                    (chord posh rd1) (chord posh rd2) (chord posh rd3) (chord posh rpk)
+
+  (one-shot-release 1000 lmet) (one-shot-release 1000 lctl) (one-shot-release 1000 lsft) (one-shot-release 1000 lalt)
+  (one-shot-release 1000 lalt) (one-shot-release 1000 lsft) (one-shot-release 1000 lctl) (one-shot-release 1000 lmet)
+
+                                                                       (chord posh thb)
+)
+
+(defchords posh 1000
+  (ld1) e
+  (ld1 thb) S-e
+  (ld1 lpk) rght
+  (ld1 thb lpk) end
+  (rd1) e
+  (rd1 thb) S-e
+  (rd1 rpk) left
+  (rd1 thb rpk) end
+
+  (ld2) t
+  (ld2 thb) S-t
+  (ld2 lpk) down
+  (ld2 thb lpk) pgdn
+  (rd2) t
+  (rd2 thb) S-t
+  (rd2 rpk) down
+  (rd2 thb rpk) pgdn
+
+  (lu3) a
+  (lu3 thb) S-a
+  (lu3 lpk) esc
+  (lu3 thb lpk) del
+  (ru3) a
+  (ru3 thb) S-a
+  (ru3 rpk) esc
+  (ru3 thb rpk) del
+
+  (ld3) o
+  (ld3 thb) S-o
+  (ld3 lpk) left
+  (ld3 thb lpk) home
+  (rd3) o
+  (rd3 thb) S-o
+  (rd3 rpk) rght
+  (rd3 thb rpk) home
+
+  (lu1) i
+  (lu1 thb) S-i
+  (lu1 lpk) ret
+  (lu1 thb lpk) tab
+  (ru1) i
+  (ru1 thb) S-i
+  (ru1 rpk) ret
+  (ru1 thb rpk) tab
+
+  (lu2) n
+  (lu2 thb) S-n
+  (lu2 lpk) up
+  (lu2 thb lpk) pgup
+  (ru2) n
+  (ru2 thb) S-n
+  (ru2 rpk) up
+  (ru2 thb rpk) pgup
+
+  (lu2 lu1) s
+  (lu2 lu1 thb) S-s
+  (lu2 lu1 lpk) ,
+  (lu2 lu1 thb lpk) '
+  (ru2 ru1) s
+  (ru2 ru1 thb) S-s
+  (ru2 ru1 rpk) ,
+  (ru2 ru1 thb rpk) '
+
+  (ld2 ld1) h
+  (ld2 ld1 thb) S-h
+  (ld2 ld1 lpk) .
+  (ld2 ld1 thb lpk) S-'
+  (rd2 rd1) h
+  (rd2 rd1 thb) S-h
+  (rd2 rd1 rpk) .
+  (rd2 rd1 thb rpk) S-'
+
+  (lu2 ld1) r
+  (lu2 ld1 thb) S-r
+  (lu2 ld1 lpk) 0
+  (lu2 ld1 thb lpk) f10
+  (ru2 rd1) r
+  (ru2 rd1 thb) S-r
+  (ru2 rd1 rpk) 0
+  (ru2 rd1 thb rpk) f10
+
+  (lu3 lu2) d
+  (lu3 lu2 thb) S-d
+  (lu3 lu2 lpk) 1
+  (lu3 lu2 thb lpk) f1
+  (ru3 ru2) d
+  (ru3 ru2 thb) S-d
+  (ru3 ru2 rpk) 1
+  (ru3 ru2 thb rpk) f1
+
+  (ld2 lu1) l
+  (ld2 lu1 thb) S-l
+  (ld2 lu1 lpk) 2
+  (ld2 lu1 thb lpk) f2
+  (rd2 ru1) l
+  (rd2 ru1 thb) S-l
+  (rd2 ru1 rpk) 2
+  (rd2 ru1 thb rpk) f2
+
+  (ld3 ld1) c
+  (ld3 ld1 thb) S-c
+  (ld3 ld1 lpk) 3
+  (ld3 ld1 thb lpk) f3
+  (rd3 rd1) c
+  (rd3 rd1 thb) S-c
+  (rd3 rd1 rpk) 3
+  (rd3 rd1 thb rpk) f3
+
+  (ld3 ld2) u
+  (ld3 ld2 thb) S-u
+  (ld3 ld2 lpk) 4
+  (ld3 ld2 thb lpk) f4
+  (rd3 rd2) u
+  (rd3 rd2 thb) S-u
+  (rd3 rd2 rpk) 4
+  (rd3 rd2 thb rpk) f4
+
+  (lu3 ld1) m
+  (lu3 ld1 thb) S-m
+  (lu3 ld1 lpk) 5
+  (lu3 ld1 thb lpk) f5
+  (ru3 rd1) m
+  (ru3 rd1 thb) S-m
+  (ru3 rd1 rpk) 5
+  (ru3 rd1 thb rpk) f5
+
+  (lu1 ld3) w
+  (lu1 ld3 thb) S-w
+  (lu1 ld3 lpk) 6
+  (lu1 ld3 thb lpk) f6
+  (ru1 rd3) w
+  (ru1 rd3 thb) S-w
+  (ru1 rd3 rpk) 6
+  (ru1 rd3 thb rpk) f6
+
+  (lu3 lu1) f
+  (lu3 lu1 thb) S-f
+  (lu3 lu1 lpk) 7
+  (lu3 lu1 thb lpk) f7
+  (ru3 ru1) f
+  (ru3 ru1 thb) S-f
+  (ru3 ru1 rpk) 7
+  (ru3 ru1 thb rpk) f7
+
+  (lu2 ld3) g
+  (lu2 ld3 thb) S-g
+  (lu2 ld3 lpk) 8
+  (lu2 ld3 thb lpk) f8
+  (ru2 rd3) g
+  (ru2 rd3 thb) S-g
+  (ru2 rd3 rpk) 8
+  (ru2 rd3 thb rpk) f8
+
+  (lu1 lu2 ld3) y
+  (lu1 lu2 ld3 thb) S-y
+  (lu1 lu2 ld3 lpk) 9
+  (lu1 lu2 ld3 thb lpk) f9
+  (ru1 ru2 rd3) y
+  (ru1 ru2 rd3 thb) S-y
+  (ru1 ru2 rd3 rpk) 9
+  (ru1 ru2 rd3 thb rpk) f9
+
+  (lu1 lu2 lu3) p
+  (lu1 lu2 lu3 thb) S-p
+  (lu1 lu2 lu3 lpk) =
+  (lu1 lu2 lu3 thb lpk) S-=
+  (ru1 ru2 ru3) p
+  (ru1 ru2 ru3 thb) S-p
+  (ru1 ru2 ru3 rpk) =
+  (ru1 ru2 ru3 thb rpk) S-=
+
+  (ld1 ld2 ld3) b
+  (ld1 ld2 ld3 thb) S-b
+  (ld1 ld2 ld3 lpk) -
+  (ld1 ld2 ld3 thb lpk) S--
+  (rd1 rd2 rd3) b
+  (rd1 rd2 rd3 thb) S-b
+  (rd1 rd2 rd3 rpk) -
+  (rd1 rd2 rd3 thb rpk) S--
+
+  (ld1 lu2 ld3) v
+  (ld1 lu2 ld3 thb) S-v
+  (ld1 lu2 ld3 lpk) /
+  (ld1 lu2 ld3 thb lpk) \
+  (rd1 ru2 rd3) v
+  (rd1 ru2 rd3 thb) S-v
+  (rd1 ru2 rd3 rpk) /
+  (rd1 ru2 rd3 thb rpk) \
+
+  (ld1 lu2 lu3) k
+  (ld1 lu2 lu3 thb) S-k
+  (ld1 lu2 lu3 lpk) ;
+  (ld1 lu2 lu3 thb lpk) S-\
+  (rd1 ru2 ru3) k
+  (rd1 ru2 ru3 thb) S-k
+  (rd1 ru2 ru3 rpk) ;
+  (rd1 ru2 ru3 thb rpk) S-\
+
+  (lu1 ld2 ld3) j
+  (lu1 ld2 ld3 thb) S-j
+  (lu1 ld2 ld3 lpk) S-;
+  (lu1 ld2 ld3 thb lpk) S-8
+  (ru1 rd2 rd3) j
+  (ru1 rd2 rd3 thb) S-j
+  (ru1 rd2 rd3 rpk) S-;
+  (ru1 rd2 rd3 thb rpk) S-8
+
+  (lu3 ld2 ld1) x
+  (lu3 ld2 ld1 thb) S-x
+  (lu3 ld2 ld1 lpk) S-4
+  (lu3 ld2 ld1 thb lpk) S-3
+  (ru3 rd2 rd1) x
+  (ru3 rd2 rd1 thb) S-x
+  (ru3 rd2 rd1 rpk) S-4
+  (ru3 rd2 rd1 thb rpk) S-3
+
+  (lu3 ld3 ld1) q
+  (lu3 ld3 ld1 thb) S-q
+  (lu3 ld3 ld1 lpk) S-2
+  (lu3 ld3 ld1 thb lpk) f11
+  (ru3 rd3 rd1) q
+  (ru3 rd3 rd1 thb) S-a
+  (ru3 rd3 rd1 rpk) S-2
+  (ru3 rd3 rd1 thb rpk) f11
+
+  (lu2 ld2 ld1) z
+  (lu2 ld2 ld1 thb) S-z
+  (lu2 ld2 ld1 lpk) S-7
+  (lu2 ld2 ld1 thb lpk) f12
+  (ru2 rd2 rd1) z
+  (ru2 rd2 rd1 thb) S-z
+  (ru2 rd2 rd1 rpk) S-7
+  (ru2 rd2 rd1 thb rpk) f12
+
+  (lu3 ld2) S-/
+  (lu3 ld2 thb) S-,
+  (lu3 ld2 lpk) S-.
+  (lu3 ld2 thb lpk) S-1
+  (ru3 rd2) S-/
+  (ru3 rd2 thb) S-,
+  (ru3 rd2 rpk) S-.
+  (ru3 rd2 thb rpk) S-1
+
+  (lu3 ld1 lu1) grv
+  (lu3 ld1 lu1 thb) S-grv
+  (lu3 ld1 lu1 lpk) S-5
+  (lu3 ld1 lu1 thb lpk) S-6
+  (ru3 rd1 ru1) grv
+  (ru3 rd1 ru1 thb) S-grv
+  (ru3 rd1 ru1 rpk) S-5
+  (ru3 rd1 ru1 thb rpk) S-6
+
+  (lu2 ld2) (one-shot-release 500 lmet)
+  (lu2 ld2 thb) S-9
+  (lu2 ld2 lpk) S-0
+  (lu2 ld2 thb lpk) (one-shot-release 500 S-lmet)
+  (ru2 rd2) (one-shot-release 500 lmet)
+  (ru2 rd2 thb) S-9
+  (ru2 rd2 rpk) S-0
+  (ru2 rd2 thb rpk) (one-shot-release 500 S-lmet)
+
+  (lu1 ld1) (one-shot-release 500 lctl)
+  (lu1 ld1 thb) [
+  (lu1 ld1 lpk) ]
+  (lu1 ld1 thb lpk) (one-shot-release 500 S-lctl)
+  (ru1 rd1) (one-shot-release 500 lctl)
+  (ru1 rd1 thb) [
+  (ru1 rd1 rpk) ]
+  (ru1 rd1 thb rpk) (one-shot-release 500 S-lctl)
+
+  (lu3 ld3) (one-shot-release 500 lalt)
+  (lu3 ld3 thb) S-[
+  (lu3 ld3 lpk) S-]
+  (lu3 ld3 thb lpk) (one-shot-release 500 S-lalt)
+  (ru3 rd3) (one-shot-release 500 lalt)
+  (ru3 rd3 thb) S-[
+  (ru3 rd3 rpk) S-]
+  (ru3 rd3 thb rpk) (one-shot-release 500 S-lalt)
+
+  (thb) spc
+  (lpk) bspc
+  (rpk) bspc
+  (thb lpk) (one-shot-release 500 lsft)
+  (thb rpk) (one-shot-release 500 lsft)
+)
