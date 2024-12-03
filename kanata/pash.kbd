@@ -1,6 +1,10 @@
+;; based on: https://inkeys.wiki/en/keymaps/posh
+
 (defcfg
-  ;; change to your keyboard
-  linux-dev /dev/input/event0
+  linux-device-detect-mode
+  ;; on Linux, keep this or change to:
+  ;; linux-dev /dev/input/eventX
+  ;; where X is the the event number of your keyboard
 )
 
 (defsrc
@@ -13,7 +17,7 @@
 )
 
 (deflayer default
-  (tap-hold-release 500 500 esc (layer-switch posh))
+  (tap-hold-release 500 500 esc (layer-switch pash))
 
      w  e  r       u  i  o
   a  s  d  f       j  k  l  ;
@@ -21,19 +25,19 @@
               spc
 )
 
-(deflayer posh
+(deflayer pash
   (tap-hold-release 500 500 esc (layer-switch default))
 
-                   (chord posh lu3) (chord posh lu2) (chord posh lu1)                    (chord posh ru1) (chord posh ru2) (chord posh ru3)
-  (chord posh lpk) (chord posh ld3) (chord posh ld2) (chord posh ld1)                    (chord posh rd1) (chord posh rd2) (chord posh rd3) (chord posh rpk)
+                   (chord pash lu3) (chord pash lu2) (chord pash lu1)                    (chord pash ru1) (chord pash ru2) (chord pash ru3)
+  (chord pash lpk) (chord pash ld3) (chord pash ld2) (chord pash ld1)                    (chord pash rd1) (chord pash rd2) (chord pash rd3) (chord pash rpk)
 
   (one-shot-release 1000 lmet) (one-shot-release 1000 lctl) (one-shot-release 1000 lsft) (one-shot-release 1000 lalt)
   (one-shot-release 1000 lalt) (one-shot-release 1000 lsft) (one-shot-release 1000 lctl) (one-shot-release 1000 lmet)
 
-                                                                       (chord posh thb)
+                                                                       (chord pash thb)
 )
 
-(defchords posh 1000
+(defchords pash 1000
   (ld1) e
   (ld1 thb) S-e
   (ld1 lpk) rght
