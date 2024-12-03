@@ -1,0 +1,6 @@
+*
+!.gitignore
+
+!FantasqueSansMono.tar.xz
+!README.md
+!setup.sh

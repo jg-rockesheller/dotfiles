@@ -1,0 +1,28 @@
+// Zed settings
+
+{
+  // misc
+  "terminal": {
+    "env": { "EDITOR": "zed --wait" }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  // look
+  "theme": {
+    "mode": "dark",
+    "dark": "Andromeda",
+    "light": "Andromeda"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "FantasqueSansM Nerd Font Mono",
+  "scrollbar": { "show": "never" },
+  "cursor_blink": false,
+  "cursor_shape": "block",
+
+  // vim mode
+  "vim_mode": true
+}
